@@ -1,0 +1,99 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import controlInventario from '../assets/control-inventario.webp';
+import reducePerdidas from '../assets/reduce-perdidas.webp';
+import impulsaCrecimiento from '../assets/impulsa-crecimiento.webp';
+import gestionaLotes from '../assets/gestiona-lotes.webp';
+import CTASection from './CTASection.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="w-full bg-white">
+	<div id="beneficios" class="max-w-[1200px] mx-auto px-16 sm:px-16 lg:px-12 py-16 sm:py-20 lg:py-24 box-border">
+		<div class="flex flex-col items-center gap-6 lg:gap-8 mb-16 lg:mb-20">
+			<h2 class="font-Inter font-semibold text-3xl sm:text-4xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center max-w-[800px]">
+				{t('split.mainTitle')}
+			</h2>
+		</div>
+
+		<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={controlInventario.src} 
+					alt={t('split.benefit1.alt')}
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
+					{t('split.benefit1.title')}
+				</h3>
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
+					{t('split.benefit1.desc')}
+				</p>
+			</div>
+		</div>
+
+		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={reducePerdidas.src} 
+					alt={t('split.benefit2.alt')}
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
+					{t('split.benefit2.title')}
+				</h3>
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
+					{t('split.benefit2.desc')}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<CTASection />
+
+<div class="w-full bg-white">
+	<div class="max-w-[1200px] mx-auto px-16 sm:px-16 lg:px-12 py-16 sm:py-20 lg:py-24 box-border">
+		<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={impulsaCrecimiento.src} 
+					alt={t('split.benefit3.alt')}
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
+					{t('split.benefit3.title')}
+				</h3>
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
+					{t('split.benefit3.desc')}
+				</p>
+			</div>
+		</div>
+
+		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={gestionaLotes.src} 
+					alt={t('split.benefit4.alt')}
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
+					{t('split.benefit4.title')}
+				</h3>
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
+					{t('split.benefit4.desc')}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

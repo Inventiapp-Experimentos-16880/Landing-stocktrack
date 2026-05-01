@@ -1,0 +1,1020 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="w-full bg-white">
+	<div
+		id="planes"
+		class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 box-border flex flex-col items-center"
+	>
+		<div class="flex flex-col items-center gap-8 w-full">
+			<div class="flex flex-col items-start gap-6 w-full max-w-[800px]">
+				<div class="flex flex-col items-start gap-2 w-full">
+					<h2
+						class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center w-full"
+					>
+						{t('pricing.title')}
+					</h2>
+				</div>
+			</div>
+
+			<div class="flex items-center justify-center w-full">
+				<div class="flex items-center gap-4 py-3">
+					<span
+						id="monthly-label"
+						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
+						>{t('pricing.monthly')}</span
+					>
+					<div
+						class="relative w-12 h-6 cursor-pointer"
+						id="pricing-toggle"
+					>
+						<div
+							class="w-full h-full bg-gray-300 rounded-full transition-all duration-300"
+						>
+						</div>
+						<div
+							id="toggle-circle"
+							class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300"
+						>
+						</div>
+					</div>
+					<span
+						id="annual-label"
+						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
+					>
+						{t('pricing.annual')} <span
+							class="font-Inter font-bold text-xs text-[#ffa22a]"
+							>({t('pricing.annualSave')})</span
+						>
+					</span>
+				</div>
+			</div>
+
+			<div
+				class="flex flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-8 items-stretch w-full px-4 sm:px-0"
+			>
+				<div
+					class="bg-white rounded-lg border-2 border-[#ffa22a] shadow-[0px_25px_66px_-20px_rgba(0,16,53,0.24)] relative lg:order-2 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<div
+							class="absolute top-0 right-0 bg-[#ffa22a] rounded-bl-[6px] px-2 py-0.5"
+						>
+							<span
+								class="font-Inter font-semibold text-sm text-white leading-5"
+								>{t('pricing.popular')}</span
+							>
+						</div>
+
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									{t('pricing.emprendedor.name')}
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									{t('pricing.emprendedor.desc')}
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<div class="flex flex-col">
+								<div class="flex items-baseline gap-2">
+									<span
+										id="emprendedor-price"
+										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+										>S/</span
+									>
+									<span
+										id="emprendedor-period"
+										class="text-xs leading-4 tracking-[0.48px] uppercase"
+										>{t('pricing.perMonth')}</span>
+								</div>
+								<span
+									id="emprendedor-annual-price"
+									class="text-sm lg:text-lg text-gray-500 line-through hidden"
+									>S/588</span>
+							</div>
+						</div>
+
+					<a
+						href="https://stocktrack-frontend.vercel.app/auth/register"
+						class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.emprendedor.cta')}
+					>	
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-white leading-6"
+							>{t('pricing.emprendedor.cta')}</span
+						>
+					</a>						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('emprendedor')"
+							aria-expanded="false"
+							aria-controls="emprendedor-details"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
+			<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="emprendedor-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>						<div id="emprendedor-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature1')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature2')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature3')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature4')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature5')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature6')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature7')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature8')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.emprendedor.feature9')}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="bg-white rounded-lg border border-[rgba(7,22,112,0.21)] relative lg:order-1 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									{t('pricing.basic.name')}
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									{t('pricing.basic.desc')}
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<span
+								class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+								>{t('pricing.basic.price')}</span
+							>
+							<span
+								id="basic-period"
+								class="text-xs leading-4 tracking-[0.48px] uppercase"
+								>{t('pricing.perMonth')}</span
+							>
+						</div>
+
+					<a
+						href="https://stocktrack-frontend.vercel.app/auth/register"
+						class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.basic.cta')}
+					>
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+							>{t('pricing.basic.cta')}</span
+						>
+					</a>						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('basic')"
+							aria-expanded="false"
+							aria-controls="basic-details"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
+							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="basic-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+						
+						<div id="basic-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature1')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature2')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature3')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature4')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature5')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature6')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature7')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature8')}
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.basic.feature9')}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="bg-white rounded-lg border border-[rgba(7,22,112,0.21)] relative lg:order-3 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									{t('pricing.empresa.name')}
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									{t('pricing.empresa.desc')}
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<div class="flex flex-col">
+								<div class="flex items-baseline gap-2">
+									<span
+										id="empresa-price"
+										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+										>{t('pricing.empresa.priceMonthly')}</span
+									>
+									<span
+										id="empresa-period"
+										class="text-xs leading-4 tracking-[0.48px] uppercase"
+										>{t('pricing.perMonth')}</span
+									>
+								</div>
+								<span
+									id="empresa-annual-price"
+									class="text-sm lg:text-lg text-gray-500 line-through hidden"
+									>{t('pricing.empresa.priceAnnualOriginal')}</span
+								>
+							</div>
+						</div>
+
+					<a
+						href="mailto:"
+						class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.empresa.cta')}
+					>
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+							>{t('pricing.empresa.cta')}</span
+						>
+					</a>						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('empresa')"
+							aria-expanded="false"
+							aria-controls="empresa-details"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
+							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="empresa-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+
+						<div id="empresa-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature1')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature2')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature3')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature4')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature5')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature6')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature7')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature8')}
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										{t('pricing.empresa.feature9')}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script define:vars={{ 
+		perMonth: t('pricing.perMonth'), 
+		perYear: t('pricing.perYear'),
+		emprendedorMonthly: t('pricing.emprendedor.priceMonthly'),
+		emprendedorAnnual: t('pricing.emprendedor.priceAnnual'),
+		emprendedorAnnualOriginal: t('pricing.emprendedor.priceAnnualOriginal'),
+		empresaMonthly: t('pricing.empresa.priceMonthly'),
+		empresaAnnual: t('pricing.empresa.priceAnnual'),
+		empresaAnnualOriginal: t('pricing.empresa.priceAnnualOriginal')
+	}}>
+		document.addEventListener("DOMContentLoaded", function () {
+			const toggle = document.getElementById("pricing-toggle");
+			const toggleCircle = document.getElementById("toggle-circle");
+			const monthlyLabel = document.getElementById("monthly-label");
+			const annualLabel = document.getElementById("annual-label");
+
+			// Price elements
+			const basicPeriod = document.getElementById("basic-period");
+			const emprendedorPrice =
+				document.getElementById("emprendedor-price");
+			const emprendedorPeriod =
+				document.getElementById("emprendedor-period");
+			const emprendedorAnnualPrice = document.getElementById(
+				"emprendedor-annual-price",
+			);
+			const empresaPrice = document.getElementById("empresa-price");
+			const empresaPeriod = document.getElementById("empresa-period");
+			const empresaAnnualPrice = document.getElementById(
+				"empresa-annual-price",
+			);
+
+			let isAnnual = false;
+
+			function updatePricing() {
+				if (isAnnual) {
+					// Switch to Annual
+					toggleCircle.style.transform = "translateX(24px)";
+					toggle.children[0].classList.add("bg-[#ffa22a]");
+					toggle.children[0].classList.remove("bg-gray-300");
+				monthlyLabel.classList.add("opacity-60");
+				annualLabel.classList.remove("opacity-60");
+
+				// Update prices
+				basicPeriod.textContent = perYear;
+				emprendedorPrice.textContent = emprendedorAnnual;
+				emprendedorPeriod.textContent = perYear;
+				emprendedorAnnualPrice.textContent = emprendedorAnnualOriginal;
+				emprendedorAnnualPrice.classList.remove("hidden");
+				empresaPrice.textContent = empresaAnnual;
+				empresaPeriod.textContent = perYear;
+				empresaAnnualPrice.textContent = empresaAnnualOriginal;
+				empresaAnnualPrice.classList.remove("hidden");
+			} else {
+				// Switch to Monthly
+				toggleCircle.style.transform = "translateX(0px)";
+				toggle.children[0].classList.remove("bg-[#ffa22a]");
+				toggle.children[0].classList.add("bg-gray-300");
+				monthlyLabel.classList.remove("opacity-60");
+				annualLabel.classList.add("opacity-60");
+
+				// Update prices
+				basicPeriod.textContent = perMonth;
+				emprendedorPrice.textContent = emprendedorMonthly;
+				emprendedorPeriod.textContent = perMonth;
+				emprendedorAnnualPrice.classList.add("hidden");
+				empresaPrice.textContent = empresaMonthly;
+				empresaPeriod.textContent = perMonth;
+				empresaAnnualPrice.classList.add("hidden");
+			}
+		}			function togglePricing() {
+				isAnnual = !isAnnual;
+				updatePricing();
+			}
+
+			toggle.addEventListener("click", togglePricing);
+			monthlyLabel.addEventListener("click", function () {
+				if (isAnnual) togglePricing();
+			});
+			annualLabel.addEventListener("click", function () {
+				if (!isAnnual) togglePricing();
+			});
+
+		updatePricing();
+	});
+	</script>
+
+	<script is:inline>
+	// Toggle details dropdown for mobile
+	function toggleDetails(plan) {
+		const details = document.getElementById(plan + '-details');
+		const chevron = document.getElementById(plan + '-chevron');
+		const button = document.querySelector(`button[aria-controls="${plan}-details"]`);
+		
+		if (details && chevron) {
+			const isHidden = details.classList.contains('hidden');
+			
+			if (isHidden) {
+				details.classList.remove('hidden');
+				details.classList.add('flex');
+				chevron.style.transform = 'rotate(180deg)';
+				if (button) button.setAttribute('aria-expanded', 'true');
+			} else {
+				details.classList.add('hidden');
+				details.classList.remove('flex');
+				chevron.style.transform = 'rotate(0deg)';
+				if (button) button.setAttribute('aria-expanded', 'false');
+			}
+		}
+	}
+
+	// Make toggleDetails globally available
+	window.toggleDetails = toggleDetails;
+</script>
+</div>

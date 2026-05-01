@@ -277,7 +277,7 @@ export const ui = {
     'pricing.empresa.feature9': 'Priority WhatsApp Support',
     
     'footer.description': 'Simplifying inventory so small businesses in Latin America can grow.',
-    'footer.copyright': '© 2025 StockTrack',
+    'footer.copyright': '© 2026 StockTrack',
     
     'common.learnMore': 'Learn more',
     'common.getStarted': 'Get started',

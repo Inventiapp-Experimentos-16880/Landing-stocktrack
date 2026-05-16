@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopNavigation from '../../components/TopNavigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('terms.title')} - StockTrack`} lang={lang}>
+	<div class="bg-white min-h-screen">
+		<TopNavigation />
+		<main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+			<h1 class="text-4xl font-extrabold text-gray-900 mb-8">{t('terms.title')}</h1>
+			
+			<div class="prose prose-slate max-w-none text-gray-600 space-y-6">
+				<p class="font-medium">{t('terms.lastUpdated')}</p>
+				
+				<p>{t('terms.welcome')}</p>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s1.title')}</h2>
+					<p>{t('terms.s1.text')}</p>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s2.title')}</h2>
+					<p>{t('terms.s2.text')}</p>
+					<ul class="list-disc pl-6 mt-2 space-y-2">
+						<li>{t('terms.s2.item1')}</li>
+						<li>{t('terms.s2.item2')}</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s3.title')}</h2>
+					<p>{t('terms.s3.text')}</p>
+					<ul class="list-disc pl-6 mt-2 space-y-2">
+						<li>{t('terms.s3.item1')}</li>
+						<li>{t('terms.s3.item2')}</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s4.title')}</h2>
+					<p>{t('terms.s4.text')}</p>
+					<ul class="list-disc pl-6 mt-2 space-y-2">
+						<li>{t('terms.s4.item1')}</li>
+						<li>{t('terms.s4.item2')}
+							<ul class="list-circle pl-6 mt-1 space-y-1">
+								<li>{t('terms.s4.item2a')}</li>
+								<li>{t('terms.s4.item2b')}</li>
+							</ul>
+						</li>
+						<li>{t('terms.s4.item3')}</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s5.title')}</h2>
+					<p>{t('terms.s5.text')}</p>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s6.title')}</h2>
+					<p>{t('terms.s6.text')}</p>
+					<ul class="list-disc pl-6 mt-2 space-y-2">
+						<li>{t('terms.s6.item1')}</li>
+						<li>{t('terms.s6.item2')}</li>
+						<li>{t('terms.s6.item3')}</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s7.title')}</h2>
+					<p>{t('terms.s7.text')}</p>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s8.title')}</h2>
+					<p>{t('terms.s8.text')}</p>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s9.title')}</h2>
+					<p>{t('terms.s9.text')}</p>
+				</section>
+
+				<section>
+					<h2 class="text-2xl font-bold text-gray-900 mb-3">{t('terms.s10.title')}</h2>
+					<p>{t('terms.s10.text')}</p>
+				</section>
+			</div>
+		</main>
+		<Footer />
+	</div>
+</Layout>

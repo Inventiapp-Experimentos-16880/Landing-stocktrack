@@ -51,10 +51,13 @@ const t = useTranslations(lang);
 
 			<div class="w-full max-w-[400px] h-px bg-gradient-to-r from-transparent via-[#160d82]/20 to-transparent"></div>
 
-			<div class="flex items-center justify-center w-full">
-				<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#474b69] text-center">
+			<div class="flex flex-col items-center justify-center w-full gap-2">
+				<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#474b69] text-center mb-0">
 					{t('footer.copyright')}
 				</p>
+				<a href={lang === 'es' ? '/terms' : '/en/terms'} class="font-Inter font-normal text-xs sm:text-sm text-[#474b69] hover:text-[#ffa22a] transition-colors underline">
+					{t('footer.terms')}
+				</a>
 			</div>
 		</div>
 		</div>
